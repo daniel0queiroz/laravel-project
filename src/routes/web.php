@@ -18,18 +18,20 @@ Route::get('/', function () {
 });
 
 Route::get('about', function() {
-    return "<h1>About Page</h1>";
+    return view('about.index');
 });
 
 Route::get('contact', function() {
-    return "<h1>Contact Page</h1>";
+    return view('contact');
 });
 
-/** Fallback Route */
-
-Route::fallback(function() {
-    return "Route Not Exist.";
-});
+/**
+ * M V C
+ * -----
+ * M = Model
+ * V = Views
+ * C = Controller
+ */
 
 
 
