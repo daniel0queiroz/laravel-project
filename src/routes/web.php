@@ -17,15 +17,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route Methods
+Route::get('about', function() {
+    return "<h1>About Page</h1>";
+});
 
-/**
- * GET - Request a resource
- * POST - Create a new resource
- * PUT - Update a resource
- * PATCH - Modify a resource
- * DELETE - Delete a resource
- */
+Route::get('contact', function() {
+    return "<h1>Contact Page</h1>";
+});
+
+/** Fallback Route */
+
+Route::fallback(function() {
+    return "Route Not Exist.";
+});
 
 
 
