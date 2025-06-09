@@ -17,23 +17,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('about', function() {
-    $about = "This is about page";
-    $about2 = "This is about two";
-    return view('about', compact('about', 'about2')); //['about' => $about]
+Route::get('/home', function() {
+    return view('home');
 });
+
+Route::get('about', function() {
+    return view('about');
+})->name('about');
 
 Route::get('contact', function() {
     return view('contact');
 });
 
-/**
- * M V C
- * -----
- * M = Model
- * V = Views
- * C = Controller
- */
 
 
 
