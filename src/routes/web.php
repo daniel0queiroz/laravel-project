@@ -51,6 +51,14 @@ Route::get('contact', function() {
     return view('contact');
 });
 
+/**
+ * M V C
+ * -------
+ * M = Model
+ * V = View
+ * C = Controller
+ */
+
 
 
 
