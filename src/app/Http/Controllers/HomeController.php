@@ -6,9 +6,12 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index()
+    /**
+     * Handle the incoming request.
+     */
+    public function __invoke(Request $request)
     {
-        $blogs = [
+       $blogs = [
         [
             'title' => 'Title one',
             'body' => 'this is a body text',
