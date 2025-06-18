@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,20 +24,4 @@ Route::get('/', function () {
 
 Route::get('/home', HomeController::class);
 
-Route::get('about', [AboutController::class, 'index'])->name('about');
-
-Route::get('contact', [ContactController::class, 'index']);
-
-Route::resource('blog', BlogController::class);
-
-/**
- * M V C
- * -------
- * M = Model
- * V = View
- * C = Controller
- */
-
-
-
-
+Route::get('/login', [LoginController::class, 'index'])->name('login');
