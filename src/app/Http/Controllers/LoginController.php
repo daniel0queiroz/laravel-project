@@ -17,6 +17,11 @@ class LoginController extends Controller
             'name' => ['required', 'alpha', 'min: 6', 'max: 10'],
             'email' => ['required', 'email'],
             'password' => 'required' 
+        ], [
+            'name.required' => 'The user name field is required.',
+            'name.alpha' => 'User name should only contain letters.',
+            'email.email' => 'Hello this is not a email.',
+            'name.min' => 'Must be 6 caractheres.'
         ]);
 
         return $request;
