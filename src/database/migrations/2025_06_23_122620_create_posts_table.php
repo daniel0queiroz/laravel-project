@@ -13,10 +13,20 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('title', 100); //255
             $table->text('description');
             $table->boolean('status');
-            $table->timestamps();
+            $table->timestamps(); // created_at and updated_at
+
+            // More Datatypes
+            $table->date('date');
+            $table->dateTime('date_time');
+            $table->time('time');
+
+            $table->decimal('amount')->default(0);
+            $table->double('double');
+            $table->float('float');
+            $table->integer('integer');
         });
     }
 
