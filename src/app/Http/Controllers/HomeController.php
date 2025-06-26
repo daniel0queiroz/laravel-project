@@ -12,8 +12,13 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-       return DB::table('posts')->join('categories', 'posts.category_id', '=', 'categories.id')
-       ->select('categories.*')
-       ->get();
+       /**
+        * count()
+        * max()
+        * min()
+        * avg()
+        * sum()
+        */
+       return DB::table('posts')->max('views');
     }
 }
