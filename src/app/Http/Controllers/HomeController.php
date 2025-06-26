@@ -14,6 +14,20 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-       return $posts = MyPost::all();
+       /**
+        * 1. Retrieving all data
+        * 2. Retrieving single data
+        * 3. Retrieving a single data or throw error
+        */
+
+        // return Post::all(); // DB::table('posts')->get()
+
+        // return $post = Post::findOrFail(4);
+
+        $posts = Post::all();
+
+        foreach($posts as $post) {
+            echo $post->title;
+        }
     }
 }
