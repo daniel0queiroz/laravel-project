@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
+use App\Models\MyPost;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -12,13 +14,6 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-       /**
-        * count()
-        * max()
-        * min()
-        * avg()
-        * sum()
-        */
-       return DB::table('posts')->max('views');
+       return $posts = MyPost::all();
     }
 }
