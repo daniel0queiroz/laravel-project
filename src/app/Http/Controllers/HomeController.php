@@ -14,10 +14,7 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $post = Post::where('id', 2)->first();
-        $post->title = 'This is a new title';
-        $post->description = 'this is a new description!';
-        $post->save();
+        Post::where('id', 4)->delete();
 
         dd('success');
     }
