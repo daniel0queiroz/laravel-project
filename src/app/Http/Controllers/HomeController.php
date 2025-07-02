@@ -13,9 +13,7 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return Post::all();
-        // Post::where('id', 3)->delete();
-
-        // dd('success');
+        // Post::find(2)->delete();
+        return Post::onlyTrashed()->get();
     }
 }
