@@ -14,9 +14,10 @@ class CategoriesTableSeeder extends Seeder
     public function run(): void
     {
         DB::table('categories')->insert([
-        ['name' => 'News', 'created_at' => null, 'updated_at' => null],
-        ['name' => 'Tech', 'created_at' => null, 'updated_at' => null],
-        ['name' => 'Education', 'created_at' => null, 'updated_at' => null],
+        ['id' => 1, 'name' => 'Tech',      'created_at' => null, 'updated_at' => null],
+        ['id' => 2, 'name' => 'Sports',    'created_at' => null, 'updated_at' => null],
+        ['id' => 3, 'name' => 'Education', 'created_at' => null, 'updated_at' => null],
+        ['id' => 4, 'name' => 'Music',     'created_at' => null, 'updated_at' => null],
         ]);
     }
 }
