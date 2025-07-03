@@ -16,20 +16,7 @@ class HomeController extends Controller
      * Handle the incoming request.
      */
     public function __invoke(Request $request)
-    {   
-        // post - may have many tags
-
-        // tag - may have many posts 
-
-        // pivot table
-
-
-        $posts = Post::with('tags')->get();
-
-        $tag = Tag::first();
-
-        // $categories = Category::find(3)->posts;
-         
-        return view('home', compact('posts'));
+    {       
+        return view('home');
     }
 }
