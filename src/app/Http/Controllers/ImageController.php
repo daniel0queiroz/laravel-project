@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class ImageController extends Controller
 {
-    public function handleImage()
+    public function handleImage(Request $request)
     {
-        return 'hello';
+        $request->image->storeAs('/images', 'new_image2.jpg', 'public');
     }
 }
