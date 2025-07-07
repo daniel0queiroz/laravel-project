@@ -23,18 +23,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', HomeController::class);
-
-Route::post('/upload-file', [ImageController::class, 'handleImage'])->name('upload-file');
-
-Route::get('/success', function() {
-    return '<h1>Successfully uploaded</h1>';
-})->name('success');
-
-Route::get('/download', [ImageController::class, 'download'])->name('download');
-
-Route::get('/login', [LoginController::class, 'index'])->name('login');
-
-Route::post('/login', [LoginController::class, 'handleLogin'])->name('login.submit');
-
-// CSRF TOKEN
+/**
+* CRUD
+* C = CREATE 
+* R = READ
+* U = UPDATE
+* D = DELETE
+*/
