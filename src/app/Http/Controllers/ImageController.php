@@ -12,5 +12,7 @@ class ImageController extends Controller
             'image' => ['required', 'min:100', 'max:1000', 'mimes:png,jpg,gif'], // 500KB
         ]);
         $request->image->storeAs('/images', 'new_image2.jpg', 'public');
+
+        return redirect('/success');
     }
 }
