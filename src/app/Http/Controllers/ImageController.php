@@ -15,4 +15,9 @@ class ImageController extends Controller
 
         return redirect('/success');
     }
+
+    public function download()
+    {
+        return response()->download(public_path('storage/images/new_image2.jpg'));
+    }
 }

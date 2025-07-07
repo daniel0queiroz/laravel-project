@@ -31,6 +31,8 @@ Route::get('/success', function() {
     return '<h1>Successfully uploaded</h1>';
 })->name('success');
 
+Route::get('/download', [ImageController::class, 'download'])->name('download');
+
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 
 Route::post('/login', [LoginController::class, 'handleLogin'])->name('login.submit');
