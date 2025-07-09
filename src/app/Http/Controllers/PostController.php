@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -36,7 +37,20 @@ class PostController extends Controller
             'description' => ['required'] 
         ]);
 
-        dd('success');
+        
+
+        $fileName = time().'_'.$request->image->getClientOriginalName();
+        $filePath = $request->image->storeAs('uploads', $fileName);
+        
+        $post = new Post();
+        $post->title = $request->title;
+        $post->description = $request->description;
+        $post->category_id = $request->category_id;
+        $post->image = $filePath;
+        $post->save();
+
+        return redirect()->route('posts.index');
+
     }
 
     /**
