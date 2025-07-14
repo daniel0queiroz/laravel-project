@@ -24,12 +24,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('posts', PostController::class);
+Route::get('posts/trash', [PostController::class, 'trashed'])->name('posts.trashed');
 
-/**
-* CRUD
-* C = CREATE 
-* R = READ
-* U = UPDATE
-* D = DELETE
-*/
+Route::resource('posts', PostController::class);
