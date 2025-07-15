@@ -46,4 +46,6 @@ Route::get('/unavailable', function() {
     return view('unavailable');
 })->name('unavailable');
 
-// Route::group([], callback)
+Route::get('contact', function() {
+    return view('contact');
+});
