@@ -1,3 +1,6 @@
 <div>
-    <button>Submit</button>
+    <button>
+        {{$slot}}
+        {{$slot}}
+    </button>
 </div>

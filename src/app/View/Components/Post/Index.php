@@ -12,12 +12,12 @@ class Index extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct($post)
+    public function __construct()
     {
-        $this->post = $post;
+        // $this->post = $post;
     }
 
-    
+
 
     /**
      * Get the view / contents that represent the component.
