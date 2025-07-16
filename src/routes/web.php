@@ -47,5 +47,6 @@ Route::get('/unavailable', function() {
 })->name('unavailable');
 
 Route::get('contact', function() {
-    return view('contact');
+    $posts = Post::all();
+    return view('contact', compact('posts'));
 });
