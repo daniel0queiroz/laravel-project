@@ -8,6 +8,7 @@ use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
 use App\Models\Post;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -49,4 +50,12 @@ Route::get('/unavailable', function() {
 Route::get('contact', function() {
     $posts = Post::all();
     return view('contact', compact('posts'));
+});
+
+Route::get('send-mail', function() {
+    Mail::raw('Hello world this is a test mail', function($message) {
+        $message->to('test@gmail.com')->subject('hi this is a test mai');
+    });
+
+    dd('success');
 });
