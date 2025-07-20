@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
+use App\Mail\OrderShipped;
 use App\Models\Post;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
@@ -53,9 +54,11 @@ Route::get('contact', function() {
 });
 
 Route::get('send-mail', function() {
-    Mail::raw('Hello world this is a test mail', function($message) {
-        $message->to('test@gmail.com')->subject('hi this is a test mai');
-    });
+    // Mail::raw('Hello world this is a test mail', function($message) {
+    //     $message->to('test@gmail.com')->subject('hi this is a test mai');
+    // });
+
+    Mail::send(new OrderShipped);
 
     dd('success');
 });
