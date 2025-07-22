@@ -67,9 +67,15 @@ Route::get('send-mail', function() {
 Route::get('get-session', function(Request $request) {
     // $data = session()->all();
 
-    // $data = $request->session()->all();
+    $data = $request->session()->all();
 
-    $data = $request->session()->get('_token');
+    // $data = $request->session()->get('_token');
 
     dd($data);
+});
+
+Route::get('save-session', function(Request $request){
+    // $request->session()->put(['user_status' => 'logged_in']);
+    session(['user_ip' => '123.23.11']);
+    return redirect('get-session');
 });
