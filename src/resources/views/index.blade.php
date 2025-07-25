@@ -9,9 +9,11 @@
                             <h4>All Posts</h4>
                         </div>
                         <div class="col-md-6 d-flex justify-content-end">
-                        <a class="btn btn-success mx-1" href="{{route('posts.create')}}">Create</a>
-                        <a class="btn btn-warning mx-1" href="{{route('posts.trashed')}}">Trashed</a>
-                    </div>
+                            @can('create_post')    
+                            <a class="btn btn-success mx-1" href="{{route('posts.create')}}">Create</a>
+                            <a class="btn btn-warning mx-1" href="{{route('posts.trashed')}}">Trashed</a>
+                            @endcan
+                        </div>
                 </div>
             </div>
             <div class="card-body">
@@ -40,13 +42,18 @@
                                     <td>{{date('d-m-Y', strtotime($post->created_at))}}</td>
                                     <td>
                                         <a class="btn-sm btn-success btn" href="{{route('posts.show', $post->id)}}">Show</a>
+                                        @can('edit_post')
                                         <a class="btn-sm btn-primary btn" href="{{route('posts.edit', $post->id)}}">Edit</a>
+                                        @endcan
                                         {{-- <a class="btn-sm btn-danger btn" href="">Delete</a> --}}
-                                        <form action="{{route('posts.destroy', $post->id)}}" method="POST">
+                                        @can('delete_post')
+                                            <form action="{{route('posts.destroy', $post->id)}}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn-sm btn-danger btn">Delete</button>
-                                        </form>
+                                            </form>
+                                        @endcan
+                                        
                                     </td>
                             </tr>
                         @endforeach
