@@ -19,6 +19,6 @@ class AuthCheck
             return $next($request);
         }
 
-        return redirect()->route('unavailable');
+        return redirect('unavailable');
     }
 }
