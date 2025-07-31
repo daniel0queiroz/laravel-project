@@ -2,7 +2,10 @@
 
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Jobs\SendMail;
+use App\Mail\PostPublished;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,4 +43,10 @@ Route::group(['middleware' => 'auth'], function() {
     Route::delete('/posts/{id}/force-delete', [PostController::class, 'forceDelete'])->name('posts.force_delete');
 
     Route::resource('posts', PostController::class);
+});
+
+Route::get('send-mail', function() {
+    
+    SendMail::dispatch();
+    dd('mail has been sent');
 });
