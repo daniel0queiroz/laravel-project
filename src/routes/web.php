@@ -58,3 +58,7 @@ Route::get('user-register', function() {
     event(new UserRegistered($email));
     dd('message sent');
 });
+
+Route::get('greeting', function() {
+    return view('greeting');
+});
