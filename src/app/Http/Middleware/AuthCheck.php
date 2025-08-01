@@ -15,7 +15,7 @@ class AuthCheck
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if($request->has('auth') && $request->auth == 1) {
+        if(auth()->check()) {
             return $next($request);
         }
 

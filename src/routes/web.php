@@ -48,5 +48,6 @@ Route::group(['middleware' => 'auth'], function() {
 Route::get('send-mail', function() {
     
     SendMail::dispatch();
+    
     dd('mail has been sent');
 });
