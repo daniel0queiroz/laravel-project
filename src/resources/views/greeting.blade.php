@@ -2,6 +2,10 @@
 
 @section('content')
 <div class="">
+    <div class="">
+        <a href="{{route('greeting', 'en')}}" class="btn btn-primary">English</a>
+        <a href="{{route('greeting', 'br')}}" class="btn btn-danger">Portuguese</a>
+    </div>
     <div class="display-3">{{__('frontend.Welcome to our application!')}}</div>
     <p>{{__('frontend.Localization in Laravel')}}</p>
 
